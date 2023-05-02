@@ -7,7 +7,7 @@ public class Processor{
     public void produce() throws InterruptedException{
         synchronized (this){                                            // esse metodo nao executa enquanto nao adquirir o lock intrinseco de Processor
             System.out.println("Thread produtora executando...");
-            wait();                                                     // essa thread "largar" o lock de Processor, aguardando ate: 1) outra thread usar 
+            wait();                                                     // essa thread abre mao do lock de Processor, aguardando ate: 1) outra thread usar 
                                                                         // notify() no mesmo objeto para acorda-la, e 2) reobter o lock, ou seja,
                                                                         // a outra thread finalize seu bloco synchronized
             System.out.println("Thread produtora continuacao.");
